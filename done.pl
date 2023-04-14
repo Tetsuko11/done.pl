@@ -26,7 +26,7 @@ for my $done (<MEMO>) {
         print DONE $done;
         $flag = 1;
     } elsif ($flag) {
-        if ($done =~ /^\*+\s[^D]/) {
+        if ($done =~ /^\*+\s/ and $done !~ /^\*+\sDONE/) {
             push @afterMemo, $done;
             $flag = 0;
         } else {
